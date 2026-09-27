@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rock Paper Scissors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="table">
+  <header>
+    <h1>Rock Paper Scissors</h1>
+    <p class="tag">Best hand wins the round.</p>
+  </header>
+
+  <div id="mode-select" class="panel">
+    <p class="lead">How are we playing?</p>
+    <button class="mode-btn" data-mode="bot"><span class="emoji">🤖</span> Play vs Bot</button>
+    <button class="mode-btn" data-mode="2p"><span class="emoji">🧑‍🤝‍🧑</span> 2 Players (pass &amp; play)</button>
+  </div>
+
+  <div id="game" class="panel hidden">
+    <div class="scoreboard">
+      <div class="score"><span class="who" id="name-a">You</span><span class="num" id="score-a">0</span></div>
+      <div class="round-info">Round<br><span id="round">1</span></div>
+      <div class="score"><span class="num" id="score-b">0</span><span class="who" id="name-b">Bot</span></div>
+    </div>
+
+    <div class="arena">
+      <div class="hand" id="hand-a">❔</div>
+      <div class="vs">VS</div>
+      <div class="hand" id="hand-b">❔</div>
+    </div>
+
+    <div id="prompt" class="prompt">Your move</div>
+
+    <div class="choices" id="choices">
+      <button class="choice" data-choice="rock"><span class="emoji">✊</span>Rock</button>
+      <button class="choice" data-choice="paper"><span class="emoji">✋</span>Paper</button>
+      <button class="choice" data-choice="scissors"><span class="emoji">✌️</span>Scissors</button>
+    </div>
+
+    <div id="pass-screen" class="pass-screen hidden">
+      <p>Pass the device to <strong id="pass-name">Player 2</strong></p>
+      <button class="primary-btn" id="pass-continue">I'm ready</button>
+    </div>
+
+    <div id="result" class="result hidden">
+      <p id="result-text"></p>
+      <button class="primary-btn" id="next-round">Next round</button>
+    </div>
+
+    <button class="reset" id="reset">Change mode / reset scores</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
